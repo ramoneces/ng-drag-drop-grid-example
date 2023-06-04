@@ -27,7 +27,7 @@ export class Example1Component {
     while (currentDate <= endDate) {
       const source = sources[Math.floor(Math.random() * sources.length)];
       items.push({
-        title: `Item ${items.length + 1}`,
+        title: `DESTINATION${items.length + 1}`,
         source,
         date: new Date(currentDate),
       });
