@@ -1,1 +1,37 @@
-<p>example1 works!</p>
+<mat-card>
+  <mat-card-header><mat-card-title>Example 1</mat-card-title></mat-card-header>
+  <mat-card-content>
+    <table cdkDropListGroup>
+      <thead>
+        <tr>
+          <th></th>
+          <th *ngFor="let source of sources">{{ source }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of table | keyvalue">
+          <th>
+            {{ row.key | date : "mediumDate" }}
+          </th>
+          <td
+            *ngFor="let cell of row.value | keyvalue"
+            class="drop-list"
+            cdkDropList
+            [cdkDropListData]="{ row: row.key, column: cell.key }"
+            (cdkDropListDropped)="dropItem($event)"
+          >
+            <div
+              *ngFor="let item of cell.value"
+              class="drag-item mat-elevation-z2"
+              cdkDrag
+              [cdkDragData]="item"
+              cdkDragLockAxis="y"
+            >
+              {{ item.title }}
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>

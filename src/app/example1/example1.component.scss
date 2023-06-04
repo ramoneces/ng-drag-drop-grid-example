@@ -1,0 +1,30 @@
+.drag-item {
+  background-color: lightblue;
+  padding: 0.5rem;
+  cursor: move;
+
+  &.cdk-drag-preview {
+    background-color: lightcoral;
+  }
+
+  &.cdk-drag-placeholder {
+    opacity: 0.5;
+  }
+}
+
+.drop-list {
+  background-color: rgb(240, 240, 240);
+  padding: 0.5rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+}
